@@ -7,7 +7,13 @@ migratedown:
 downloadefos:
 	go run cmd/download-efos/main.go
 
-sqlc:
-	sqlc generate
+composeup:
+	docker-compose up -d
 
-.PHONY: migrateup migratedown downloadefos sqlc
+composestop:
+	docker-compose stop
+
+searchefos:
+	go run cmd/search-efos/main.go
+
+.PHONY: migrateup migratedown downloadefos composeup composestop searchefos
