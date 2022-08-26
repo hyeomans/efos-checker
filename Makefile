@@ -4,4 +4,10 @@ migrateup:
 migratedown:
 	go run cmd/migrate/migrate.go -down
 
-.PHONY: migrateup migratedown
+downloadefos:
+	go run cmd/download-efos/main.go
+
+sqlc:
+	sqlc generate
+
+.PHONY: migrateup migratedown downloadefos sqlc

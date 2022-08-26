@@ -9,3 +9,4 @@ go.work
 data/
 .env
 .vscode
+definitivos.csv
