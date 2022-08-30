@@ -58,6 +58,7 @@ func main() {
 	for _, nombre := range nombres {
 		var r Result
 		err := db.Get(&r, sqlQuery, nombre, "%"+nombre+"%")
+
 		if err != nil {
 			if err == sql.ErrNoRows {
 				continue
@@ -69,6 +70,8 @@ func main() {
 
 		fmt.Printf("%+v\n", r)
 	}
+
+	fmt.Println("done")
 }
 
 func readNombres() []string {
